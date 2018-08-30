@@ -23,8 +23,8 @@ class MainFrame extends JFrame {
 //		pack();
 		add(new Rectangle());
 		pack();
-//		Image imageIcon = new ImageIcon("map.gif").getImage();
-//		setIconImage(imageIcon);
+		Image imageIcon = new ImageIcon("map.gif").getImage();
+		setIconImage(imageIcon);
 	}
 
 
@@ -59,12 +59,22 @@ class Rectangle extends JComponent{
 	public void paintComponent(Graphics g) {
 		g.setFont(new Font("Tahoma", Font.BOLD, 40));
 		g.drawString("Oleg", 200, 100);
-		Rectangle2D floatReact = new Rectangle2D.Float(100.F, 250.0F, 220.5F, 200.0F);
-		Rectangle2D doubleReact = new Rectangle2D.Double(500.d, 250.0d, 220.5d, 200.0d);
-		Graphics2D g2 = (Graphics2D)g;
-		g2.draw(floatReact);
+		Rectangle2D floatReact = new Rectangle2D.Float(100.F, 250.0F, 200.5F, 100.0F);
+		Rectangle2D doubleReact = new Rectangle2D.Double(100.F, 140.0F, 200.5F, 100.0F);
+
 		Graphics2D g3 = (Graphics2D)g;
 		g3.draw(doubleReact);
+		g3.setPaint(Color.RED);
+		g3.fill(doubleReact);
+
+		((Graphics2D) g).setBackground(Color.YELLOW);
+
+
+		Graphics2D g2 = (Graphics2D)g;
+		g2.draw(floatReact);
+		g2.setPaint(new Color(0, 128, 128));
+		g2.fill(floatReact);
+		g2.drawString("Warning!", 310, 300);
 	}
 
 	@Override
